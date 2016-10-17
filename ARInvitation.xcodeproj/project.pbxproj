@@ -74,6 +74,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		825195E81DAA795100ECA25F /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		8252E48C1D9AB26300DFDAC4 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +104,7 @@
 		8252E4971D9AB26300DFDAC4 /* ARInvitation */ = {
 			isa = PBXGroup;
 			children = (
+				825195E81DAA795100ECA25F /* Controls */,
 				8252E4981D9AB26300DFDAC4 /* AppDelegate.swift */,
 				8252E49A1D9AB26300DFDAC4 /* ViewController.swift */,
 				8252E49C1D9AB26300DFDAC4 /* Main.storyboard */,
@@ -415,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XD7JAMNS86;
 				INFOPLIST_FILE = ARInvitation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -428,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = XD7JAMNS86;
 				INFOPLIST_FILE = ARInvitation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -514,6 +524,7 @@
 				8252E4BF1D9AB26300DFDAC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8252E4C01D9AB26300DFDAC4 /* Build configuration list for PBXNativeTarget "ARInvitationTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +533,7 @@
 				8252E4C21D9AB26300DFDAC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8252E4C31D9AB26300DFDAC4 /* Build configuration list for PBXNativeTarget "ARInvitationUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +542,7 @@
 				8252E4C51D9AB26300DFDAC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
