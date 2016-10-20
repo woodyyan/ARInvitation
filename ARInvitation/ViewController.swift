@@ -18,7 +18,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        InnerStyle()
+        initCamera()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +26,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func InnerStyle()
+    func initCamera()
     {
         let cameraDevice : AVCaptureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         let  captureDeviceIntput : AVCaptureDeviceInput = try!  AVCaptureDeviceInput(device: cameraDevice)
@@ -64,18 +64,10 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     //扫描时的数据代理
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
-        if metadataObjects.count == 0 {
-            let alert = UIAlertController(title: "没有发现二维码", message: "没有发现二维码", preferredStyle: UIAlertControllerStyle.alert)
-            self.present(alert, animated: true, completion: nil)
-            return
-        }
-        
         //判断转化为AVMMRCO后的数组的第一个对象是否为空，不为空赋值给message，message类型是否为AVMetadataObjectTypeQRCode(二维码类型)和meesage的字符串值不为nil
-        //此处first或者last都可以
-        if  let  message = metadataObjects.first as? AVMetadataMachineReadableCodeObject , message.type == AVMetadataObjectTypeQRCode && message.stringValue != nil{
-            
+        if let message = metadataObjects.first as? AVMetadataMachineReadableCodeObject, message.type == AVMetadataObjectTypeQRCode && message.stringValue != nil{
             print(message.stringValue)
-            let alert = UIAlertController(title: "Error", message: message.stringValue, preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "二维码内容", message: message.stringValue, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }

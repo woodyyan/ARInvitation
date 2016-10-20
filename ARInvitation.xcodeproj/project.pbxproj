@@ -14,6 +14,9 @@
 		8252E4A31D9AB26300DFDAC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8252E4A11D9AB26300DFDAC4 /* LaunchScreen.storyboard */; };
 		8252E4AE1D9AB26300DFDAC4 /* ARInvitationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8252E4AD1D9AB26300DFDAC4 /* ARInvitationTests.swift */; };
 		8252E4B91D9AB26300DFDAC4 /* ARInvitationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8252E4B81D9AB26300DFDAC4 /* ARInvitationUITests.swift */; };
+		82E2DF041DB90B550057553B /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2DF031DB90B550057553B /* PlayerView.swift */; };
+		82E2DF051DB90B550057553B /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2DF031DB90B550057553B /* PlayerView.swift */; };
+		82E2DF061DB90B550057553B /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2DF031DB90B550057553B /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,7 @@
 		8252E4B41D9AB26300DFDAC4 /* ARInvitationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARInvitationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8252E4B81D9AB26300DFDAC4 /* ARInvitationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARInvitationUITests.swift; sourceTree = "<group>"; };
 		8252E4BA1D9AB26300DFDAC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82E2DF031DB90B550057553B /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,13 +78,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		825195E81DAA795100ECA25F /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controls;
-			sourceTree = "<group>";
-		};
 		8252E48C1D9AB26300DFDAC4 = {
 			isa = PBXGroup;
 			children = (
@@ -104,13 +101,13 @@
 		8252E4971D9AB26300DFDAC4 /* ARInvitation */ = {
 			isa = PBXGroup;
 			children = (
-				825195E81DAA795100ECA25F /* Controls */,
 				8252E4981D9AB26300DFDAC4 /* AppDelegate.swift */,
 				8252E49A1D9AB26300DFDAC4 /* ViewController.swift */,
 				8252E49C1D9AB26300DFDAC4 /* Main.storyboard */,
 				8252E49F1D9AB26300DFDAC4 /* Assets.xcassets */,
 				8252E4A11D9AB26300DFDAC4 /* LaunchScreen.storyboard */,
 				8252E4A41D9AB26300DFDAC4 /* Info.plist */,
+				82E2DF031DB90B550057553B /* PlayerView.swift */,
 			);
 			path = ARInvitation;
 			sourceTree = "<group>";
@@ -270,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82E2DF041DB90B550057553B /* PlayerView.swift in Sources */,
 				8252E49B1D9AB26300DFDAC4 /* ViewController.swift in Sources */,
 				8252E4991D9AB26300DFDAC4 /* AppDelegate.swift in Sources */,
 			);
@@ -280,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8252E4AE1D9AB26300DFDAC4 /* ARInvitationTests.swift in Sources */,
+				82E2DF051DB90B550057553B /* PlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8252E4B91D9AB26300DFDAC4 /* ARInvitationUITests.swift in Sources */,
+				82E2DF061DB90B550057553B /* PlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
