@@ -15,7 +15,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
         InnerStyle()
     }
 
@@ -61,11 +63,10 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     //扫描时的数据代理
-    private func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!){
-        
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         if metadataObjects.count == 0 {
             let alert = UIAlertController(title: "没有发现二维码", message: "没有发现二维码", preferredStyle: UIAlertControllerStyle.alert)
-            alert.present(self, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
             return
         }
         
@@ -73,9 +74,10 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         //此处first或者last都可以
         if  let  message = metadataObjects.first as? AVMetadataMachineReadableCodeObject , message.type == AVMetadataObjectTypeQRCode && message.stringValue != nil{
             
+            print(message.stringValue)
             let alert = UIAlertController(title: "Error", message: message.stringValue, preferredStyle: UIAlertControllerStyle.alert)
-            alert.present(self, animated: true, completion: nil)
-            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
 }
