@@ -66,10 +66,17 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         //判断转化为AVMMRCO后的数组的第一个对象是否为空，不为空赋值给message，message类型是否为AVMetadataObjectTypeQRCode(二维码类型)和meesage的字符串值不为nil
         if let message = metadataObjects.first as? AVMetadataMachineReadableCodeObject, message.type == AVMetadataObjectTypeQRCode && message.stringValue != nil{
-            print(message.stringValue)
-            let alert = UIAlertController(title: "二维码内容", message: message.stringValue, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            
+            if let _ = self.view.viewWithTag(101) {
+                
+            }else {
+                let playerView = PlayerView(frame: CGRect(x: 10, y: 10, width: 200, height: 200))
+                playerView.tag = 101
+                self.view.addSubview(playerView)
+            }
+//            let alert = UIAlertController(title: "二维码内容", message: message.stringValue, preferredStyle: UIAlertControllerStyle.alert)
+//            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+//            self.present(alert, animated: true, completion: nil)
         }
     }
 }
